@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chân Mềm — Studio chăm sóc thú cưng</title>
+<meta name="description" content="Chân Mềm — studio chăm sóc thú cưng: tắm vệ sinh, cắt tỉa tạo kiểu, trông giữ theo ngày.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF1EC; --card:#FFFFFF; --ink:#33272E; --muted:#6E5A63;
+    --accent:#D96C57; --bg-soft:#F3DDD6; --line:#E8CFC4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Be Vietnam Pro",sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg)}
+  h1,h2,h3{font-family:"Fraunces",serif;margin:0 0 12px}
+  h1{font-size:56px;font-weight:600;line-height:1.15}
+  h2{font-size:32px;font-weight:500;text-align:center}
+  h2 .u{color:var(--accent)}
+  p{margin:0 0 12px}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  section{padding:80px 0}
+  .lead{text-align:center;color:var(--muted);max-width:640px;margin:0 auto 40px}
+  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:500;padding:14px 30px;border-radius:999px;border:none;cursor:pointer;font-size:16px}
+  .btn:hover{opacity:.92}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .tag{display:inline-block;font-size:14px;color:var(--muted)}
+  /* Header */
+  header{background:var(--bg);padding:20px 0;position:sticky;top:0;z-index:10;border-bottom:1px solid var(--line)}
+  .head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{font-family:"Fraunces",serif;font-size:28px;font-weight:600;text-decoration:none;color:var(--ink)}
+  .logo span{color:var(--accent)}
+  nav a{color:var(--ink);text-decoration:none;margin-left:24px;font-weight:500}
+  nav a:hover{color:var(--accent)}
+  /* Hero */
+  .hero{padding:56px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .hero h1 .u{color:var(--accent);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+  .hero img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:24px;border:1px solid var(--line)}
+  /* Intro */
+  .intro{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  .promise{list-style:none;padding:0;margin:16px 0 0}
+  .promise li{padding-left:28px;position:relative;margin-bottom:10px}
+  .promise li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+  /* Services */
+  .services{background:var(--bg-soft)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .card-body{padding:24px}
+  .card-body h3{font-size:20px}
+  .price{color:var(--accent);font-weight:700;font-size:18px;margin:8px 0}
+  /* Regulars */
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .pet{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--card)}
+  .pet img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+  .pet p{text-align:center;padding:14px 8px;margin:0;font-weight:500}
+  .pet small{display:block;color:var(--muted);font-weight:400}
+  /* Steps */
+  .steps{background:var(--bg-soft)}
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px;text-align:center}
+  .step-num{font-family:"Fraunces",serif;font-size:40px;font-weight:600;color:var(--accent);line-height:1}
+  .step h3{font-size:20px;margin-top:12px}
+  /* Testimonials */
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .quote{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 24px}
+  .quote .who{color:var(--muted);font-size:14px;margin-top:12px}
+  /* Form */
+  .form-sec{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  form{max-width:560px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:32px}
+  label{display:block;font-weight:500;margin:16px 0 6px}
+  input,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:16px;color:var(--ink);background:#fff}
+  form .btn{width:100%;margin-top:24px}
+  .demo-note{text-align:center;color:var(--muted);font-size:14px;margin-top:16px}
+  #form-msg{text-align:center;color:var(--accent);font-weight:500;margin-top:16px;display:none}
+  /* Footer */
+  footer{padding:48px 0;text-align:center;color:var(--muted);font-size:14px}
+  footer strong{color:var(--ink)}
+  @media (max-width:820px){
+    section{padding:48px 0}
+    h1{font-size:36px}
+    h2{font-size:26px}
+    .hero-grid,.intro-grid{grid-template-columns:1fr}
+    .hero img{aspect-ratio:4/5}
+    .cards,.quotes{grid-template-columns:1fr}
+    .grid4,.steps-grid{grid-template-columns:1fr 1fr}
+    nav{display:none}
+    .btn{width:100%;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap head">
+    <a class="logo" href="#">Chân <span>Mềm</span></a>
+    <nav>
+      <a href="#dich-vu">Dịch vụ</a>
+      <a href="#khach-quen">Khách quen</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#dat-lich">Đặt lịch</a>
+    </nav>
+    <a class="btn" href="#dat-lich">Đặt lịch</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Studio chăm sóc thú cưng</span>
+      <h1>Chân <span class="u">Mềm</span> — nơi các bé được cưng chiều nhẹ nhàng</h1>
+      <p>Tắm vệ sinh, cắt tỉa tạo kiểu và trông giữ theo ngày — trong không gian sáng, sạch và đầy yêu thương.</p>
+      <a class="btn" href="#dat-lich">Đặt lịch ngay</a>
+      <a class="btn btn-ghost" href="#dich-vu" style="margin-left:12px">Xem dịch vụ</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1200&q=80" alt="Chú chó sau khi được chăm sóc, tươi tắn và vui vẻ (ảnh mẫu)">
+  </div>
+</section>
+
+<section class="intro">
+  <div class="wrap">
+    <h2>Chăm sóc nhẹ nhàng, <span class="u">không lồng chật</span></h2>
+    <p class="lead">Nội dung mẫu: Chân Mềm tin rằng mỗi bé đều xứng đáng được chăm sóc như ở nhà — chậm rãi, dịu dàng và luôn có người bên cạnh.</p>
+    <div class="intro-grid">
+      <div>
+        <p>Studio của chúng tôi dành cả ngày chỉ cho một số lượng bé vừa đủ, để mỗi bé đều được quan tâm riêng. Nước ấm, dầu tắm dịu nhẹ, khăn mềm và thật nhiều lời khen — đó là cách chúng tôi làm việc mỗi ngày.</p>
+        <p class="tag">Nội dung giới thiệu là mẫu, sẽ cập nhật theo thông tin thật của studio.</p>
+      </div>
+      <ul class="promise">
+        <li>Không nhốt lồng chật — bé tự do đi lại trong khu vực chăm sóc</li>
+        <li>Nhân viên theo dõi từng bé trong suốt buổi chăm sóc</li>
+        <li>Báo cáo ảnh cập nhật cho chủ nuôi sau mỗi buổi</li>
+        <li>Sản phẩm tắm gội dịu nhẹ, an toàn cho da nhạy cảm</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="dich-vu">
+  <div class="wrap">
+    <h2>Dịch vụ của <span class="u">Chân Mềm</span></h2>
+    <p class="lead">Ba nhóm dịch vụ chính — mỗi bé đều được tư vấn gói phù hợp với giống, cân nặng và tính cách.</p>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=900&q=80" alt="Chú cún sau khi tắm, lông sạch và mềm (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Tắm &amp; vệ sinh</h3>
+          <p>Tắm nước ấm, sấy khô nhẹ nhàng, vệ sinh tai, cắt móng và chải lông gỡ rối.</p>
+          <p class="price">Từ 150.000đ <small style="color:var(--muted);font-weight:400">(giá mẫu, theo cân nặng)</small></p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=900&q=80" alt="Chú chó lông vàng sau khi cắt tỉa gọn gàng (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Cắt tỉa tạo kiểu</h3>
+          <p>Tạo kiểu theo giống và khuôn mặt, tỉa lông đều tay, giữ dáng tự nhiên cho bé.</p>
+          <p class="price">Từ 250.000đ <small style="color:var(--muted);font-weight:400">(giá mẫu, theo cân nặng)</small></p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80" alt="Chó và mèo ở cùng nhau trong không gian sáng (ảnh mẫu)">
+        <div class="card-body">
+          <h3>Trông giữ theo ngày</h3>
+          <p>Bé được ăn, chơi và nghỉ ngơi đúng giờ giấc, có người trông cả ngày và cập nhật ảnh cho bạn.</p>
+          <p class="price">Từ 200.000đ/ngày <small style="color:var(--muted);font-weight:400">(giá mẫu, theo cân nặng)</small></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="khach-quen">
+  <div class="wrap">
+    <h2>Khách quen của tiệm</h2>
+    <p class="lead">Những gương mặt quen thuộc vẫn ghé Chân Mềm mỗi tuần — tên các bé dưới đây là tên mẫu.</p>
+    <div class="grid4">
+      <div class="pet"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=700&q=80" alt="Mèo khách quen (ảnh mẫu)"><p>Bơ<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=80" alt="Hai chú chó đang chơi cùng nhau (ảnh mẫu)"><p>Mít &amp; Kem<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=700&q=80" alt="Chú chó pug (ảnh mẫu)"><p>Đậu<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=700&q=80" alt="Chú chó con lông vàng (ảnh mẫu)"><p>Sữa<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?auto=format&fit=crop&w=700&q=80" alt="Mèo khách quen (ảnh mẫu)"><p>Bông<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=700&q=80" alt="Chú chó đang cười (ảnh mẫu)"><p>Milo<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=700&q=80" alt="Chó mẹ và chó con (ảnh mẫu)"><p>Gấu<small>Tên mẫu</small></p></div>
+      <div class="pet"><img src="https://images.unsplash.com/photo-1574144611937-0df059b5ef3e?auto=format&fit=crop&w=700&q=80" alt="Mèo khách quen (ảnh mẫu)"><p>Muối<small>Tên mẫu</small></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="quy-trinh">
+  <div class="wrap">
+    <h2>Gửi bé chỉ với 4 bước</h2>
+    <p class="lead">Quy trình rõ ràng để bạn yên tâm mỗi lần gửi bé lại cho chúng tôi.</p>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">1</div><h3>Đặt lịch</h3><p>Chọn dịch vụ và ngày mong muốn qua form bên dưới.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Kiểm tra sức khỏe</h3><p>Nhân viên kiểm tra nhanh da, lông và sức khỏe tổng quát của bé.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Chăm sóc</h3><p>Tắm, tỉa hoặc trông giữ theo gói đã chọn — luôn có người bên cạnh bé.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Bàn giao kèm ảnh cập nhật</h3><p>Bạn nhận bé cùng ảnh và ghi chú chăm sóc sau buổi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Khách hàng nói gì</h2>
+    <p class="lead">Cảm nhận dưới đây là mẫu — sẽ thay bằng nhận xét thật của khách khi studio cung cấp.</p>
+    <div class="quotes">
+      <div class="quote"><p>“Bơ nhà mình vốn sợ tắm, vậy mà về nhà thơm tho, lông mềm, còn quẫy đuôi tít. Từ đó tuần nào cũng ghé.”</p><p class="who">— Chị Lan, chủ của Bơ (mẫu)</p></div>
+      <div class="quote"><p>“Gửi Milo cả ngày mà cứ như có người nhà trông — ảnh cập nhật gửi về liên tục, yên tâm hẳn.”</p><p class="who">— Anh Tuấn, chủ của Milo (mẫu)</p></div>
+      <div class="quote"><p>“Cắt tỉa rất đều tay, bé mèo nhà mình không hề căng thẳng. Studio sáng, sạch, thơm mùi dễ chịu.”</p><p class="who">— Chị Hằng, chủ của Bông (mẫu)</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="form-sec" id="dat-lich">
+  <div class="wrap">
+    <h2>Đặt lịch cho bé</h2>
+    <p class="lead">Điền thông tin bên dưới — studio sẽ liên hệ xác nhận lịch hẹn.</p>
+    <form id="booking-form">
+      <label for="owner">Tên chủ nuôi</label>
+      <input id="owner" name="owner" type="text" placeholder="Ví dụ: Nguyễn Văn A" required>
+      <label for="pet">Tên thú cưng</label>
+      <input id="pet" name="pet" type="text" placeholder="Ví dụ: Bơ" required>
+      <label for="service">Dịch vụ cần</label>
+      <select id="service" name="service" required>
+        <option value="">— Chọn dịch vụ —</option>
+        <option>Tắm &amp; vệ sinh</option>
+        <option>Cắt tỉa tạo kiểu</option>
+        <option>Trông giữ theo ngày</option>
+      </select>
+      <label for="date">Ngày mong muốn</label>
+      <input id="date" name="date" type="date" required>
+      <button class="btn" type="submit">Gửi yêu cầu đặt lịch</button>
+      <p class="demo-note">Bản demo — form chỉ giao diện, chưa gửi dữ liệu thật đi đâu.</p>
+      <p id="form-msg">Đây là bản demo nên yêu cầu chưa được gửi đi. Studio sẽ liên hệ khi form chính thức hoạt động.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Chân Mềm</strong> — Studio chăm sóc thú cưng</p>
+    <p>Địa chỉ: [CẦN BỔ SUNG] · Điện thoại: [CẦN BỔ SUNG]</p>
+    <p>Giờ mở cửa (mẫu): 8:00 – 20:00 mỗi ngày</p>
+    <p>Ảnh trên trang là ảnh mẫu (Unsplash). © Chân Mềm.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('booking-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('form-msg').style.display = 'block';
+});
+</script>
+</body>
+</html>
